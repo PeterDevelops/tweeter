@@ -2,16 +2,17 @@
 
 // Basic express setup:
 
-const PORT          = 8080;
+const PORT          = 8080; // localhost:8080
 const express       = require("express");
 const bodyParser    = require("body-parser");
-const app           = express();
+const app           = express(); //invokes express
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true })); // uses bodyparser for req.body
 app.use(express.static("public"));
 
 // The in-memory database of tweets. It's a basic object with an array in it.
-const db = require("./lib/in-memory-db");
+const db = require("./lib/in-memory-db");  // an object that requires the data-files/initial tweets
+const dataHelpers = require("./lib/data-helpers.js"); // data-helpers.js defines a helper function for saving and getting tweets
 
 // The `data-helpers` module provides an interface to the database of tweets.
 // This simple interface layer has a big benefit: we could switch out the
@@ -23,7 +24,7 @@ const db = require("./lib/in-memory-db");
 const DataHelpers = require("./lib/data-helpers.js")(db);
 
 // Update the dates for the initial tweets (data-files/initial-tweets.json).
-require("./lib/date-adjust")();
+const updateDates = require("./lib/date-adjust.js")();
 
 // The `tweets-routes` module works similarly: we pass it the `DataHelpers` object
 // so it can define routes that use it to interact with the data layer.
