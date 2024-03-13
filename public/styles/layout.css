@@ -20,7 +20,13 @@ body {
   font-family: 'Source Sans 3', sans-serif;
   font-size: 24px;
   }
-  
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+
+  /*
+  * Additional CSS can be defined below or in other CSS files, as per instructions
+  */
+
+  .container {
+    width: 90%;
+    margin: 0 auto;
+    background-color: #f4f1ec;
+  }
