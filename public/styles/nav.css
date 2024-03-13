@@ -13,7 +13,12 @@ nav {
   font-family: 'Bungee', sans-serif;
 }
 
-.arrow-down {
+.nav-tweet-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* .arrow-down {
   display: flex;
   justify-content: center;
-}
+} */
