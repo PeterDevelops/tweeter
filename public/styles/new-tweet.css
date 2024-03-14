@@ -10,6 +10,7 @@
   margin-top: 20px;
 }
 
+
 .tweet-container {
   display: flex;
   justify-content: space-between;
@@ -20,4 +21,8 @@
 .tweet-btn {
   background-color: rgb(65, 135, 210);
   color: #f4f1ec;
+}
+
+.tweet-btn:hover {
+  cursor: pointer;
 }
