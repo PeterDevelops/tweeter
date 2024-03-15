@@ -1,5 +1,6 @@
 #tweet-text {
   width: 100%;
+  padding: 5px;
   border: none;
   outline: none;
   border-bottom: solid black;
@@ -9,7 +10,6 @@
 .new-tweet {
   margin-top: 20px;
 }
-
 
 .tweet-container {
   display: flex;
@@ -21,8 +21,13 @@
 .tweet-btn {
   background-color: rgb(65, 135, 210);
   color: #f4f1ec;
+  padding: 5px;
 }
 
 .tweet-btn:hover {
   cursor: pointer;
+}
+
+.redColor {
+  color: red;
 }
