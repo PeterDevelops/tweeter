@@ -44,7 +44,7 @@
     </nav>
 
     <!-- User Profile -->
-    <header>
+    <header class="header-container">
       <div class="header-user">
       <div class="header-avatar">
           <img src="/images/profile-hex.png"> 
@@ -57,21 +57,33 @@
   </header>
 
     <!-- Page-specific (main) content here -->
+    <!-- Main container holds our forms and pre made tweets -->
     <main class="container">
-      <section class="new-tweet">
 
+      <section class="new-tweet">
         <form method="POST" action="/tweets/"> <!-- Method attribute specifies HOW to send data, and action is WHERE that data is sent -->
 
           <label class="tweet-text-label" for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
 
-          <div class="tweet-container">
+          <div class="tweet-btn-container">
             <button class="tweet-btn" type="submit">Tweet</button>
             <output name="counter" for="tweet-text">140</output>
           </div>
           <!-- class="counter"  for output-->
         </form>
       </section>
+
+      <article class="article-container">
+        <header></header>
+
+        <div>
+          <p>If money doesn't grow on tree, then why do banks have so many branches?</p>
+        </div>
+
+        <footer></footer>
+      </article>
+
     </main>
   </body>
 </html>
