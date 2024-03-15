@@ -1,3 +1,28 @@
-.article-container {
-  border: 20px solid black;
+article {
+  border: 5px solid black;
+  margin-top: 40px;
+  padding: 0 20px;
+}
+
+header div.article-user {
+  display: flex;
+  align-items: center;
+}
+
+header.article-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+article header p {
+  padding-left: 15px;
+}
+
+article div.tweet-section {
+  border-bottom: 3px solid black;
+}
+
+article footer.article-footer {
+  display: flex;
+  justify-content: space-between;
 }

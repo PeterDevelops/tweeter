@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css">
     <link rel="stylesheet" href="/styles/header.css" type="text/css">
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css">
+    <link rel="stylesheet" href="/styles/tweet.css" type="text/css">
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -58,7 +59,7 @@
 
     <!-- Page-specific (main) content here -->
     <!-- Main container holds our forms and pre made tweets -->
-    <main class="container">
+    <main class="main-container">
 
       <section class="new-tweet">
         <form method="POST" action="/tweets/"> <!-- Method attribute specifies HOW to send data, and action is WHERE that data is sent -->
@@ -74,14 +75,27 @@
         </form>
       </section>
 
-      <article class="article-container">
-        <header></header>
+      <article>
+        <header class="article-header">
 
-        <div>
+          <div class="article-user">
+          <i class="fa-solid fa-user-plus"></i>
+          <p>Newton</p>
+        </div>
+
+          <p>@SirIsaaac</p>
+        </header>
+
+        <div class="tweet-section">
           <p>If money doesn't grow on tree, then why do banks have so many branches?</p>
         </div>
 
-        <footer></footer>
+        <footer class="article-footer">
+          <p>10 days ago<p>
+          <i class="fa-solid fa-flag"></i>
+          <i class="fa-solid fa-retweet"></i>
+          <i class="fa-solid fa-heart"></i>
+        </footer>
       </article>
 
     </main>
