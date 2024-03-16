@@ -5,7 +5,7 @@ $(document).ready(() => {
     // console.log(140 - value.length, 'value');
     const tweetNum = $(this).closest('form').find('output'); // traverses up to form then down to output
     console.log(tweetNum, 'counter');
-    $(tweetNum).text(140 - value.length); // updates the counter from 140
+    $(tweetNum).text(140 - value.length); // updates the text counter from 140
     // if tweetNum < 0 we want to turn the color red
     console.log(140 - value.length, 'values')
     if (140 - value.length < 0) {

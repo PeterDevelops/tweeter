@@ -1,13 +1,14 @@
-.main-article {
+.tweet {
   border: 3px solid black;
   margin-top: 40px;
 }
 
-.main-article:hover {
+.tweet:hover {
   box-shadow: 5px 5px 5px rgb(188, 192, 214);
 }
 
-article header div {
+/* Targets avatar and users name */
+article header span {
   display: flex;
   align-items: center;
 }
