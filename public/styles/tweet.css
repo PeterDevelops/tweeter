@@ -1,28 +1,69 @@
-article {
-  border: 5px solid black;
+.main-article {
+  border: 3px solid black;
   margin-top: 40px;
-  padding: 0 20px;
 }
 
-header div.article-user {
+.main-article:hover {
+  box-shadow: 5px 5px 5px rgb(188, 192, 214);
+}
+
+article header div {
   display: flex;
   align-items: center;
 }
 
-header.article-header {
+article header img {
+  width: 40px;
+}
+
+/* Targets Newton and @SirIsaac */
+article header {
   display: flex;
   justify-content: space-between;
+  padding: 0 20px;
+}
+
+/* Targets @SirIsaac */
+.article-name-handle {
+  opacity: 0.3;
+  font-size: 22px;
 }
 
 article header p {
   padding-left: 15px;
 }
 
-article div.tweet-section {
+.tweet-section {
   border-bottom: 3px solid black;
+  margin: 0 10px;
 }
 
-article footer.article-footer {
+/* Targets Main Tweet Message */
+.tweet-section p {
+  padding: 0 10px;
+  font-size: 22px;
+}
+
+/* Targets Newton */
+article header p {
+  padding: 0 10px;
+  font-weight: 100;
+}
+
+article footer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  position: relative;
+  top: -5px;
+  padding: 0 20px;
+  font-size: 15px;
+}
+
+article footer i {
+  padding-left: 6px;
+}
+
+article footer i:hover {
+  color: rgb(213, 166, 100);
 }
