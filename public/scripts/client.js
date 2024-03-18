@@ -72,7 +72,7 @@ const renderTweets = function(tweets) {
    const $tweet = createTweetElement(tweet);
 
     //takes return value and appends it to the tweets container
-    $('.main-container').append($tweet);
+    $('#tweet-container').prepend($tweet);
   }
 }
 
