@@ -61,10 +61,12 @@ article footer {
   font-size: 15px;
 }
 
+/* Targets the icons */
 article footer i {
   padding-left: 6px;
 }
 
 article footer i:hover {
   color: rgb(213, 166, 100);
+  cursor: pointer;
 }
