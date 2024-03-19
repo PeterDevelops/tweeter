@@ -77,9 +77,21 @@ const renderTweets = function(tweets) {
 }
 renderTweets(data);
 
-$('#tweet-form').on('submit', function( event ) {
-  alert('Handler for `submit` called.');
-  event.preventDefault();
-})
+$('#tweet-form').on('submit', function( event ) { // accesses #tweet-forms submit event
+  event.preventDefault(); // prevents the default action of the submit
+  const formData = $(this).serialize(); // serializes the form data
+  console.log('form data',formData);
+  $.ajax({ // performs an asynchronous HTTP (AJAX) request
+    type: "POST",
+    url: '/tweets',
+    data: formData,
+    success: function(response) {
+      console.log('Success', response);
+    },
+    error: function(xhr, status, error) {
+      console.error('Error', error);
+    },
+  });
+});
 
 });
