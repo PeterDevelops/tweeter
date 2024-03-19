@@ -71,10 +71,13 @@ $('#tweet-form').on('submit', function( event ) { // accesses #tweet-forms submi
 
 // INPUT: ARRAY OF TWEETS AS JSON
 const loadTweets = function() {
-  $.ajax('/tweets', { METHOD: 'GET' }) // ajax makes a get request from /tweets endpoint
+  $.ajax('/tweets', { method: 'GET' }) // ajax makes a get request from /tweets endpoint
   .then(function (jsonTweets) { // creating a promise with the result as a parameter
     console.log('Success', jsonTweets);
     renderTweets(jsonTweets); // giving renderTweets the results of the GET request
+  })
+  .catch(function (error) { // promises needs a catch in case of potential errors
+    console.error('Error fetching tweets:', error);
   })
 }
 loadTweets(); // invoking loadTweets
