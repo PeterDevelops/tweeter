@@ -49,28 +49,9 @@ const renderTweets = function(tweets) {
     $('#tweet-container').prepend($tweet);
   }
 }
-// renderTweets(data);
-
-$('#tweet-form').on('submit', function( event ) { // accesses #tweet-forms submit event
-  event.preventDefault(); // prevents the default action of the submit
-  const formData = $(this).serialize(); // serializes the form data
-  console.log('form data',formData);
-
-  $.ajax({ // performs an asynchronous HTTP (AJAX) request
-    type: "POST",
-    url: '/tweets',
-    data: formData,
-    success: function(response) {
-      console.log('Success', response);
-    },
-    error: function(xhr, status, error) {
-      console.error('Error', error);
-    },
-  });
-});
 
 // INPUT: ARRAY OF TWEETS AS JSON
-const loadTweets = function() {
+const loadTweets = function() { // performs an asynchronous GET HTTP (AJAX) request
   $.ajax('/tweets', { method: 'GET' }) // ajax makes a get request from /tweets endpoint
   .then(function (jsonTweets) { // creating a promise with the result as a parameter
     console.log('Success', jsonTweets);
@@ -81,5 +62,29 @@ const loadTweets = function() {
   })
 }
 loadTweets(); // invoking loadTweets
+
+$('#tweet-form').on('submit', function( event ) {
+  event.preventDefault(); // prevents the default action of the submit
+  const $tweetInput = $('#tweet-text').val(); // Grabs the value of our textArea
+
+  if ($tweetInput.length < 1) { // if empty input return an alert
+    return alert('Tweet is empty!');
+} else if ($tweetInput.length > 140) { // if input has exceeded 140 characters return an alert
+    return alert('Exceeded maximum tweet!');
+} else { // otherwise perform our AJAX post request
+    const formData = $(this).serialize(); // serializes the form data
+    $.ajax({ // performs an asynchronous POST HTTP (AJAX) request
+      type: "POST",
+      url: '/tweets',
+      data: formData,
+      success: function(response) {
+        console.log('Success', response);
+      },
+      error: function(xhr, status, error) {
+        console.error('Error', error);
+      },
+    });
+  }
+});
 
 });
