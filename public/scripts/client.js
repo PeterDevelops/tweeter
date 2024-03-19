@@ -75,7 +75,11 @@ const renderTweets = function(tweets) {
     $('#tweet-container').prepend($tweet);
   }
 }
-
 renderTweets(data);
+
+$('#tweet-form').on('submit', function( event ) {
+  alert('Handler for `submit` called.');
+  event.preventDefault();
+})
 
 });
