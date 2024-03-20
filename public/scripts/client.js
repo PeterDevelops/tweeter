@@ -35,7 +35,7 @@ const createTweetElement = function(tweetObj) {
         </div>
         </footer>
       </article>`);
-      // target the '.tweet-section p' then escapes unsafe characters at tweetObj.content.text
+      // Changes the ".tweet-section p" to be safe from XSS
       $tweet.find('.tweet-section p').text(tweetObj.content.text);
   return $tweet;
 }
@@ -64,13 +64,22 @@ const loadTweets = function() { // performs an asynchronous GET HTTP (AJAX) requ
 }
 loadTweets(); // invoking loadTweets
 
+
+
 const tweetValidation = () => {
   const $tweetInput = $('#tweet-text').val().trim(); // Grabs the value of our textArea
+  const $tweetError = $('.tweet-error p'); // targets our hidden 'p' tag
   if ($tweetInput.length < 1) { // if empty input return an alert
-    return alert('Tweet is empty!');
-  } else if ($tweetInput.length > 140) { // if input has exceeded 140 characters return an alert
-    return alert('Exceeded maximum tweet!');
+    $tweetError.slideUp(); // default to slideUp if not already
+    $tweetError.html('Your tweet box is empty.').slideDown();
+    return false; // return false prevents the submits default behaviour
   }
+  if ($tweetInput.length > 140) { // if input has exceeded 140 characters return an alert
+    $tweetError.slideUp();
+    $tweetError.html('You have reached over the maximum number of characters.').slideDown();
+    return false;
+  }
+  $tweetError.slideUp();
   return true;
 }
 
@@ -91,7 +100,7 @@ $('#tweet-form').on('submit', function( event ) {
         console.log('Success', response);
       },
       error: function(xhr, status, error) {
-        console.error('Error', error);
+        console.error('AJAX Error:', error);
       },
     });
   }

@@ -31,3 +31,11 @@
 .redColor {
   color: red;
 }
+
+.tweet-error p {
+  display: none;
+  border: 2px solid red;
+  color: red;
+  padding: 6px;
+  font-size: 21px;
+}
