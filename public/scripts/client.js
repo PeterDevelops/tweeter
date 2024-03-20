@@ -63,27 +63,33 @@ const loadTweets = function() { // performs an asynchronous GET HTTP (AJAX) requ
 }
 loadTweets(); // invoking loadTweets
 
-$('#tweet-form').on('submit', function( event ) {
-  event.preventDefault(); // prevents the default action of the submit
-  const $tweetInput = $('#tweet-text').val(); // Grabs the value of our textArea
-
+const tweetValidation = () => {
+  const $tweetInput = $('#tweet-text').val().trim(); // Grabs the value of our textArea
   if ($tweetInput.length < 1) { // if empty input return an alert
     return alert('Tweet is empty!');
-} else if ($tweetInput.length > 140) { // if input has exceeded 140 characters return an alert
+  } else if ($tweetInput.length > 140) { // if input has exceeded 140 characters return an alert
     return alert('Exceeded maximum tweet!');
-} else { // otherwise perform our AJAX post request
+  }
+  return true;
+}
+
+$('#tweet-form').on('submit', function( event ) {
+  event.preventDefault(); // prevents the default action of the submit
+  if (tweetValidation()) {
     const formData = $(this).serialize(); // serializes the form data
     $.ajax({ // performs an asynchronous POST HTTP (AJAX) request
       type: "POST",
       url: '/tweets',
       data: formData,
       success: function(response) {
+        loadTweets(); // after successful submission, reload tweets
         console.log('Success', response);
       },
       error: function(xhr, status, error) {
         console.error('Error', error);
       },
     });
+    $('#tweet-text').val('');
   }
 });
 
