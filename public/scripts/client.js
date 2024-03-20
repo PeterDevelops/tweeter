@@ -35,6 +35,8 @@ const createTweetElement = function(tweetObj) {
         </div>
         </footer>
       </article>`);
+      // target the '.tweet-section p' then escapes unsafe characters at tweetObj.content.text
+      $tweet.find('.tweet-section p').text(tweetObj.content.text);
   return $tweet;
 }
 
