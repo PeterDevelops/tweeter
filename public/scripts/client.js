@@ -83,13 +83,13 @@ $('#tweet-form').on('submit', function( event ) {
       data: formData,
       success: function(response) {
         loadTweets(); // after successful submission, reload tweets
+        $('#tweet-text').val('');
         console.log('Success', response);
       },
       error: function(xhr, status, error) {
         console.error('Error', error);
       },
     });
-    $('#tweet-text').val('');
   }
 });
 
