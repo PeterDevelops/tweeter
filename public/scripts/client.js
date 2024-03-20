@@ -54,7 +54,6 @@ const renderTweets = function(tweets) {
 const loadTweets = function() { // performs an asynchronous GET HTTP (AJAX) request
   $.ajax('/tweets', { method: 'GET' }) // ajax makes a get request from /tweets endpoint
   .then(function (jsonTweets) { // creating a promise with the result as a parameter
-    console.log('Success', jsonTweets);
     renderTweets(jsonTweets); // giving renderTweets the results of the GET request
   })
   .catch(function (error) { // promises needs a catch in case of potential errors
@@ -75,7 +74,9 @@ const tweetValidation = () => {
 
 $('#tweet-form').on('submit', function( event ) {
   event.preventDefault(); // prevents the default action of the submit
+  
   if (tweetValidation()) {
+    const tweetNum = $(this).find('output');
     const formData = $(this).serialize(); // serializes the form data
     $.ajax({ // performs an asynchronous POST HTTP (AJAX) request
       type: "POST",
@@ -84,6 +85,7 @@ $('#tweet-form').on('submit', function( event ) {
       success: function(response) {
         loadTweets(); // after successful submission, reload tweets
         $('#tweet-text').val('');
+        $(tweetNum).val('140');
         console.log('Success', response);
       },
       error: function(xhr, status, error) {
