@@ -1,5 +1,6 @@
 .header-container {
-  height: 520px;
+  height: 400px;
+  margin-top: 120px;
   width: 100%;
   background-color: #FFA500;
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
@@ -13,5 +14,10 @@
 }
 
 .header-avatar {
-  margin-top: 140px;
+   margin-top: 20px;
+}
+
+.header-name h2 {
+  color: rgb(255, 255, 255);
+  font-weight: 400;
 }

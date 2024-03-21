@@ -30,3 +30,29 @@ body {
     margin: 0 auto;
     background-color: inherit;
   }
+
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .nav-container {
+      background-color: #FFA500;
+      background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+    }
+    .main-container {
+      margin-top: 40px;
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    .content-container {
+      display: flex;
+      margin: 60px 30px 30px 30px;
+    }
+    .main-container {
+      margin-top: 120px;
+      /* margin-left: 120px; */
+    }
+    .header-container {
+      max-width: 500px;
+      
+      margin-right: 150px;
+    }
+  }
