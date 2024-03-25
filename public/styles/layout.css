@@ -36,9 +36,6 @@ body {
       background-color: #FFA500;
       background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
     }
-    .main-container {
-      margin-top: 40px;
-    }
   }
 
   @media only screen and (min-width: 1024px) {
@@ -48,11 +45,9 @@ body {
     }
     .main-container {
       margin-top: 120px;
-      /* margin-left: 120px; */
     }
     .header-container {
       max-width: 500px;
-      
       margin-right: 150px;
     }
   }

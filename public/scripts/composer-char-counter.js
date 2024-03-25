@@ -4,7 +4,6 @@ $(document).ready(() => {
     const value = $(this).val(); // shows value of a textarea
     const tweetNum = $(this).closest('form').find('output'); // traverses up to form then down to output
     $(tweetNum).text(140 - value.length); // updates the text counter from 140
-    // if tweetNum < 0 we want to turn the color red
     if (140 - value.length < 0) {
       tweetNum.addClass('redColor');
     } else {
