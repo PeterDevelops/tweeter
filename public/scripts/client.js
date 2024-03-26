@@ -41,12 +41,11 @@ const createTweetElement = function(tweetObj) {
 }
 
 const renderTweets = function(tweets) {
-
   // loops through tweets
   for (const tweet of tweets) {
     // calls createTweetElements for each tweet
-   const $tweet = createTweetElement(tweet);
-
+    const $tweet = createTweetElement(tweet);
+    
     //takes return value and appends it to the tweets container
     $('#tweet-container').prepend($tweet);
   }
@@ -56,6 +55,7 @@ const renderTweets = function(tweets) {
 const loadTweets = function() { // performs an asynchronous GET HTTP (AJAX) request
   $.ajax('/tweets', { method: 'GET' }) // ajax makes a get request from /tweets endpoint
   .then(function (jsonTweets) { // creating a promise with the result as a parameter
+    $('#tweet-container').empty(); // empty out the .tweet-container before rendering the the new tweet
     renderTweets(jsonTweets); // giving renderTweets the results of the GET request
   })
   .catch(function (error) { // promises needs a catch in case of potential errors
@@ -94,6 +94,7 @@ $('#tweet-form').on('submit', function( event ) {
       url: '/tweets',
       data: formData,
       success: function(response) {
+        // $('#tweet-container').empty();
         loadTweets(); // after successful submission, reload tweets
         $('#tweet-text').val('');
         $(tweetNum).val('140');
