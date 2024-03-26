@@ -21,7 +21,8 @@
 .tweet-btn {
   background-color: rgb(65, 135, 210);
   color: #f4f1ec;
-  padding: 5px;
+  padding: 3px 8px;
+  font-size: small;
 }
 
 .tweet-btn:hover {
