@@ -1,6 +1,6 @@
 # Tweeter Project
 
-Welcome to Tweeter! Tweeter allows users to post short messages known as "tweets" to share their thoughts with others. It uses a simple and easy interface composing and viewing tweets, mimicking the functionality of popular social media platforms like Twitter(aka X).
+Welcome to Tweeter! Tweeter allows users to post short messages known as "tweets" to share their thoughts with others. It uses a simple and easy interface for composing and viewing tweets, mimicking the functionality of popular social media platforms like Twitter(aka X).
 
 ## Features
 - **Simple Interface:** Tweeter provides an intuitive interface for composing and viewing tweets.
